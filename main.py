@@ -16,13 +16,14 @@ from PyQt5.QtWidgets import (
 from PyQt5 import uic  # Импортируем uic
 from random import randint
 import sys
+from UI.ui_file import Ui_MainWindow
 
 import sqlite3
 
 
 def db_opener(func):
     def func_with_open(*args, **kwargs):
-        con = sqlite3.connect("coffee.sqlite")
+        con = sqlite3.connect("data/coffee.sqlite")
         pointer = con.cursor()
 
         def new_func(*args, **kwargs):
